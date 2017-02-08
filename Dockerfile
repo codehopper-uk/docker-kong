@@ -12,5 +12,9 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 8000 8443 8001 7946
+WORKDIR /usr/local/kong
+COPY Procfile /usr/local/kong
+COPY kong.conf /usr/local/kong
+
+EXPOSE 8080
 CMD ["kong", "start"]
