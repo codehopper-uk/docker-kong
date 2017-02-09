@@ -1,0 +1,29 @@
+{
+  "name": "microserviceResourceDefinitions",
+  "version": "1.0.0",
+  "generated": "2017-02-09T13:59:06Z",
+  "description": "Generated for kong, consumed by concourse",
+
+  "dependencies": [
+    {
+      "type": "postgres",
+      "environmentConfig": {
+        "uat": {
+          "version": "9.4",
+          "disk": 10,
+          "iops": 1000
+        }
+      },
+      "exposeAs": "PG_DB_URL"
+    },
+    {
+      "type": "redis",
+      "environmentConfig": {
+        "uat": {
+          "version": "3.2"
+        }
+      },
+      "exposeAs": "REDIS_URL"
+    }
+  ]
+}
